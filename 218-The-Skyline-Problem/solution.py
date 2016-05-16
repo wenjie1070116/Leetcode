@@ -27,10 +27,10 @@ class Solution(object):
             if line[1] > 0:
                 if line[1] > -heights[0]:
                     res.append(line)
-                heapq.heappush(heights, -line[1])
+                heights.heappush(-line[1])
                 #bisect.insort(heights, line[1])
             else:
-                heapq.heappop(heights, line[1])
+                heights.heappop(line[1])
                 #heights.remove(abs(line[1]))
                 if abs(line[1]) > -heights[0]:
                     res.append([line[0], heights[-1]])
