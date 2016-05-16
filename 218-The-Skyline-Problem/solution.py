@@ -8,8 +8,8 @@ class Solution(object):
         if not buildings: return []
         lines = []
         for building in buildings:
-            lines.append(building[0], building[2])
-            lines.append(building[0], -building[1])
+            lines.append([building[0], building[2]])
+            lines.append([building[0], -building[1]])
         def comp(line1, line2):
             if line1[0] < line2[0]:
                 return -1
