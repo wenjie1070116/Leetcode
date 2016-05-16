@@ -9,7 +9,7 @@ class Solution(object):
         lines = []
         for building in buildings:
             lines.append([building[0], building[2]])
-            lines.append([building[0], -building[1]])
+            lines.append([building[1], -building[2]])
         def comp(line1, line2):
             if line1[0] < line2[0]:
                 return -1
