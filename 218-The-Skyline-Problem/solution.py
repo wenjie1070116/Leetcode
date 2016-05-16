@@ -1,4 +1,4 @@
-import bisect
+import heapq
 class Solution(object):
     def getSkyline(self, buildings):
         """
@@ -25,12 +25,14 @@ class Solution(object):
         res = []
         for line in lines:
             if line[1] > 0:
-                if line[1] > heights[-1]:
+                if line[1] > -heights[0]:
                     res.append(line)
-                bisect.insort(heights, line[1])
+                heapq.heappush(heights, -line[1])
+                #bisect.insort(heights, line[1])
             else:
-                heights.remove(abs(line[1]))
-                if abs(line[1]) > heights[-1]:
+                heapq.heappop(heights, line[1])
+                #heights.remove(abs(line[1]))
+                if abs(line[1]) > -heights[0]:
                     res.append([line[0], heights[-1]])
         return res
                     
