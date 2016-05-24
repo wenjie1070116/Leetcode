@@ -6,11 +6,13 @@ class Solution(object):
         :type t: int
         :rtype: bool
         """
-        if not nums or len(nums) < 2: return False
+        if not nums or len(nums) < 2 or k < 1: return False
         hashmap = {}
         for i in xrange(len(nums)):
-            for j in xrange(max(0, i-k), min(i+k, len(nums))+1):
-                if j in hashmap and abs(nums[i]-hashmap[j])<=t:
+            cur = nums/k
+            for j in (cur-1, cur, cur+1):
+                if j in hashmap and i-hashmap[j] <= k and abs(hashmap[j]-nums[i]) <= t:
                     return True
-            hashmap[i] = nums[i]
+            hashmap[cur] = i
         return False
+        
