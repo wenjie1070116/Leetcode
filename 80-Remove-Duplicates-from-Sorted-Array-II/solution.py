@@ -11,7 +11,7 @@ class Solution(object):
         mark = True
         for i in xrange(1, n):
             if nums[i] == target and mark:
-                nums[i-count] = nums[i]
+                nums[i-count] = nums[i] #This sentence is important because under this situation nums[i] also need to be saved
                 mark = False
             else:
                 if nums[i] != target:
