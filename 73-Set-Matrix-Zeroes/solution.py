@@ -26,7 +26,7 @@ class Solution(object):
                 matrix[i] = [0]*n
         for j in xrange(1, n):
             if matrix[0][j] == 0:
-                for i in xrange(1, n):
+                for i in xrange(1, m):
                     matrix[i][j] = 0
         if firstrow:
             matrix[0] = [0]*n
