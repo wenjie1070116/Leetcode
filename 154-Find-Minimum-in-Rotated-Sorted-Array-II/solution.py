@@ -4,6 +4,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        # A faster method
+        if not nums: return
+        start, end = 0, len(nums)-1
+        while start + 1 < end:
+            mid = start + (end-start)/2
+            if nums[mid] > nums[end]:
+                start = mid + 1
+            else:
+                end = mid if nums[mid] != nums[end] else end-1
+        return min(nums[start], nums[end])
+        '''
         if not nums: return
         start, end = 0, len(nums)-1
         while start + 1 < end:
@@ -18,4 +29,5 @@ class Solution(object):
                 else:
                     start = mid
         return min(nums[start], nums[end])
+        '''
         
