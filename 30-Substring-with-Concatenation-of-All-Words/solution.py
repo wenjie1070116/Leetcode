@@ -7,7 +7,7 @@ class Solution(object):
         """
         if not s or not words: return []
         m, n = len(words), len(words[0])
-        Words = collection.Counter(words)
+        Words = collections.Counter(words)
         res = []
         resset = set()
         for i in xrange(len(s)-m*n+1):
