@@ -17,7 +17,6 @@ class Solution(object):
                 for j in xrange(n-k-1, -1, -1):
                     for m in xrange(k):
                         if (dp[i][j][m] and dp[i+m+1][j+m+1][k-m-1]) or (dp[i+k-m][j][m] and dp[i][j+m+1][k-m-1]):
-                        #if (s1[i:i+m+1] == s2[j:j+m+1] and s1[i+m+1:i+k+1] == s2[j+m+1:j+k+1]) or (s1[i+k-m:i+k+1] == s2[j:j+m+1] and s1[i:i+k-m] == s2[j+m+1:j+k+1]):
                             dp[i][j][k] = True
                             break
         return dp[0][0][-1]
