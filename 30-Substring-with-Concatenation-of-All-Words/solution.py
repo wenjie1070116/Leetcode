@@ -9,10 +9,7 @@ class Solution(object):
         m, n = len(words), len(words[0])
         Words = collections.Counter(words)
         res = []
-        resset = set()
-        for i in xrange(len(s)-m*n+1):
-            if i in resset:
-                continue
+        for i in xrange(n):
             hashmap = {}
             count = 0
             left = i
