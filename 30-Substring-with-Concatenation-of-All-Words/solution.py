@@ -24,7 +24,6 @@ class Solution(object):
                         left += n
                     if count == m:
                         res.append(left)
-                        resset.add(left)
                 else:
                     left = j+n
                     count = 0
