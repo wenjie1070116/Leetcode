@@ -14,7 +14,7 @@ class Solution(object):
         dummy = ListNode(0)
         dummy.next = head
         fast = head
-        for i in xrange(n):
+        for i in xrange(n-1):
             fast = fast.next
         slow = dummy
         while fast.next:
