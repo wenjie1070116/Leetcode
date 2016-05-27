@@ -13,7 +13,7 @@ class Solution(object):
         if not head: return None
         dummy = ListNode(0)
         dummy.next = head
-        slow = fast = head
+        slow = fast = dummy
         mark = False
         while fast.next and fast.next.next:
             slow = slow.next
