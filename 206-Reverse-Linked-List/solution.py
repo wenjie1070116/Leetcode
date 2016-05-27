@@ -13,7 +13,7 @@ class Solution(object):
         if not head or not head.next: return head
         prev = None
         while head:
-            Next = head.enxt
+            Next = head.next
             head.next = prev
             prev = head
             head = Next
