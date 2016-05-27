@@ -18,15 +18,23 @@ class Solution(object):
         node.next = headB
         slow = dummy
         fast = dummy
-        while True:
+        mark = False
+        while fast.next and fast.next.next:
             slow = slow.next
             fast = fast.next.next
             if slow == fast:
+                mark = True
                 break
+        if not mark: 
+            del dummy
+            node.next = None
+            return None
         find = dummy
         while True:
             find = find.next
             slow = slow.next
             if find == slow:
+                del dummy
+                node.next = None
                 return slow
         
