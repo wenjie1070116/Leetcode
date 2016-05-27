@@ -10,6 +10,22 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
+        # in place
+        if not head or not head.next: return head
+        first = last = head.next
+        prev = head
+        cur = head.next.next
+        while cur:
+            last.next = cur.next
+            prev.next = cur
+            cur.next = first
+            prev = cur
+            last = last.next
+            if last:
+                cur = last.next
+        return head
+        
+        """
         if not head or not head.next: return head
         left = ListNode('a')
         l = left
@@ -28,5 +44,6 @@ class Solution(object):
             count += 1
         l.next = right.next
         return left.next
+        """
                 
         
