@@ -21,7 +21,7 @@ class Solution(object):
             cur.next = first
             prev = cur
             last = last.next
-            cur = last.next if last else None
+            cur = last.next if last else None # 'else None' is very important else loop can not stop when lists length is odd
         return head
         
         """
