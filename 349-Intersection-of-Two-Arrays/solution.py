@@ -5,12 +5,12 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
-        if not nums1 or not nums2:
-            return []
-        res = []
+        if not nums1 or not nums2: return []
         count = collections.Counter(nums1)
+        res = []
         for num in nums2:
             if num in count:
                 res.append(num)
                 count.pop(num)
         return res
+                
