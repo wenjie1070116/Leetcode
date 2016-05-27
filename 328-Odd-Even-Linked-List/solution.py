@@ -21,8 +21,7 @@ class Solution(object):
             cur.next = first
             prev = cur
             last = last.next
-            if last:
-                cur = last.next
+            cur = last.next if last else None
         return head
         
         """
