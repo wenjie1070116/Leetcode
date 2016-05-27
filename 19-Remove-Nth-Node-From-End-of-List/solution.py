@@ -11,14 +11,16 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
+        dummy = ListNode(0)
+        dummy.next = head
         fast = head
-        for i in xrange(n-1):
+        for i in xrange(n):
             fast = fast.next
-        slow = head
-        while fast:
+        slow = dummy
+        while fast.next:
             slow = slow.next
             fast = fast.next
         slow.next = slow.next.next
-        return head
+        return dummy.next
         
         
