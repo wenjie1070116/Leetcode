@@ -8,10 +8,10 @@ class Solution(object):
         if not nums1 or not nums2: return []
         count = collections.Counter(nums1)
         res = []
-        for num in nums2:
-            if num in count:
-                res.append(num)
-                count[num] -= 1
-                if count[num] == 0:
-                    count.pop(num)
+        for i in xrange(len(nums2)):
+            if nums2[i] in count:
+                res.append(nums2[i])
+                count[nums2[i]] -= 1
+                if count[nums2[i]] == 0:
+                    count.pop(nums2[i])
         return res
