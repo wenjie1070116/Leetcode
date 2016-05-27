@@ -19,7 +19,7 @@ class Solution(object):
         count = 1
         while cur:
             if count%2 == 1:
-                l.next = ListNode(cur.val)
+                l.next = ListNode(cur.val) #ListNode(cur.val) instead of cur
                 l = l.next
             else:
                 r.next = ListNode(cur.val)
