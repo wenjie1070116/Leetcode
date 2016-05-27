@@ -11,18 +11,18 @@ class Solution(object):
         :rtype: ListNode
         """
         if not head or not head.next: return head
-        left = ListNode(0)
+        left = ListNode('a')
         l = left
-        right = ListNode(0)
+        right = ListNode('b')
         r = right
         cur = head
         count = 1
         while cur:
             if count%2 == 1:
-                l.next = cur
+                l.next = ListNode(cur.val)
                 l = l.next
             else:
-                r.next = cur
+                r.next = ListNode(cur.val)
                 r = r.next
             cur = cur.next
             count += 1
