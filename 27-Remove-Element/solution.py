@@ -5,7 +5,7 @@ class Solution(object):
         :type val: int
         :rtype: int
         """
-        if not nums: return nums
+        if not nums: return 0
         count = 0
         for i in xrange(len(nums)):
             if nums[i] == val:
