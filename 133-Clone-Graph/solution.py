@@ -24,7 +24,7 @@ class Solution(object):
                     hashmap[cur.label] = UndirectedGraphNode(neighbor.label)
                 if neighbor.label not in traversed:
                     stack.append(neighbor)
-            traversed.add(neighbor.label)
+            traversed.add(cur.label)
         return copy
                 
         
