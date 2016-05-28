@@ -13,15 +13,16 @@ class Solution(object):
         :rtype: bool
         """
         if not root: return False
-        self.res = False
+        #self.res = False
         def dfs(node, Sum):
             if not node.left and not node.right and Sum == sum:
-                    self.res = True
-            if node.left:
-                dfs(node.left, Sum+node.left.val)
-            if node.right:
-                dfs(node.right, Sum+node.right.val)
-        dfs(root, root.val)
-        return self.res
-                
+                    #self.res = True
+                    return True
+            if node.left and dfs(node.left, Sum+node.left.val):
+                return True
+            if node.right and dfs(node.right, Sum+node.right.val):
+                return True
+        if dfs(root, root.val): return True
+        #return self.res
+        return False        
         
