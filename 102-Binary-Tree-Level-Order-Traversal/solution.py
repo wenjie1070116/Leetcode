@@ -13,7 +13,7 @@ class Solution(object):
         """
         if not root: return []
         nodes = [root]
-        res = []
+        res = [[root.val]]
         while nodes:
             new = []
             temp = []
@@ -26,5 +26,5 @@ class Solution(object):
                     temp.append(node.right.val)
             if temp:
                 res.append(temp)
-            res = new
+            nodes = new
         return res
