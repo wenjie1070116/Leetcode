@@ -10,4 +10,8 @@ class Solution(object):
         if 3**idx == n:
             return True
         return False
+        '''
+        # another method
+        return n > 0 && 1162261467 % n == 0;
+        '''
         
