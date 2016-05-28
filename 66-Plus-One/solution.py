@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: List[int]
         """
         if not digits: return [1]
-        for i in xrange(len(digits)-1, -1, 0):
+        for i in xrange(len(digits)-1, -1, -1):
             if digits[i] < 9:
                 digits[i] += 1
                 return digits
