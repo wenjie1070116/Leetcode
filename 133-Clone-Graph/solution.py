@@ -18,10 +18,9 @@ class Solution(object):
         while stack:
             cur = stack.pop()
             for neighbor in cur.neighbors:
-                if neighbor.label in hashmap:
-                    cur.neighbors.append(hashmap[neighbor.label])
-                else:
+                if neighbor.label not in hashmap:
                     hashmap[cur.label] = UndirectedGraphNode(neighbor.label)
+                cur.neighbors.append(hashmap[neighbor.label])
                 if neighbor.label not in traversed:
                     stack.append(neighbor)
             traversed.add(cur.label)
