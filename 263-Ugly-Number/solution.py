@@ -12,5 +12,5 @@ class Solution(object):
             num /= 3
         while num % 2 == 0:
             num /= 2
-        return nums == 1
+        return num == 1
         
