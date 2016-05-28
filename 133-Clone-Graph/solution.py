@@ -13,7 +13,7 @@ class Solution(object):
         if not node: return
         copy = UndirectedGraphNode(node.label)
         hashmap = {node.label:copy}
-        traversed = {}
+        traversed = set()
         stack = [node]
         while stack:
             cur = stack.pop()
