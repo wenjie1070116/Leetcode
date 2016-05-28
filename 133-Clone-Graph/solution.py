@@ -10,6 +10,7 @@ class Solution(object):
         :type node: UndirectedGraphNode
         :rtype: UndirectedGraphNode
         """
+        if not node: return
         copy = UndirectedGraphNode(node.label)
         hashmap = {node.label:copy}
         traversed = {}
