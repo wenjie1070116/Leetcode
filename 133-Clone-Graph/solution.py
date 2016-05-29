@@ -16,7 +16,6 @@ class Solution(object):
         stack = [node]
         while stack:
             cur = stack.pop()
-            traversed.add(cur.label)
             for neighbor in cur.neighbors:
                 if neighbor.label not in hashmap:
                     hashmap[neighbor.label] = UndirectedGraphNode(neighbor.label)
