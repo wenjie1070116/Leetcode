@@ -13,14 +13,20 @@ class Solution(object):
         if not node: return
         copy = UndirectedGraphNode(node.label)
         hashmap = {node.label:copy}
+        traversed = set()
+        traversed.add(node.label)
         stack = [node]
         while stack:
             cur = stack.pop()
             for neighbor in cur.neighbors:
+                if neighbor.label not in traversed:
+                    stack.append(neighbor)
+                    traversed.add(neighbor.label)
                 if neighbor.label not in hashmap:
                     hashmap[neighbor.label] = UndirectedGraphNode(neighbor.label)
-                    stack.append(neighbor)
                 hashmap[cur.label].neighbors.append(hashmap[neighbor.label])
+                
+            
         return copy
                 
         
