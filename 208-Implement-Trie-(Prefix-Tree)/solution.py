@@ -48,7 +48,7 @@ class Trie(object):
         :rtype: bool
         """
         root = self.root
-        for ch in word:
+        for ch in prefix:
             idx = ord(ch)-ord('a')
             if not root.children[idx]:
                 return False
