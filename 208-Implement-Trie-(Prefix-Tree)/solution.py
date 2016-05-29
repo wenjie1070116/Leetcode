@@ -34,7 +34,7 @@ class Trie(object):
         root = self.root
         for ch in word:
             idx = ord(ch)-ord('a')
-            if not root[idx]:
+            if not root.children[idx]:
                 return False
             root = root.children[idx]
         return root.isword is not None
@@ -50,7 +50,7 @@ class Trie(object):
         root = self.root
         for ch in word:
             idx = ord(ch)-ord('a')
-            if not root[idx]:
+            if not root.children[idx]:
                 return False
             root = root.children[idx]
         return True
