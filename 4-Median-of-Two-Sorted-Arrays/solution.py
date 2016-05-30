@@ -14,11 +14,11 @@ class Solution(object):
         if mid1 < mid2:
             if n == (l1+r1)/2+1:
                 return mid1
-            return self.findnth(nums1, (l1+r1)/2+1, r1, nums2, l2, r2, n-(l1+r1)/2-1)
+            return self.findnth(nums1, (l1+r1)/2+1, r1, nums2, l2, r2, n-(l1+r1)/2-1+l1)
         else:
             if n == (l2+r2)/2+1:
                 return mid2
-            return self.findnth(nums1, l1, r1, nums2, (l2+r2)/2+1, r2, n-(l2+r2)/2-1)
+            return self.findnth(nums1, l1, r1, nums2, (l2+r2)/2+1, r2, n-(l2+r2)/2-1+l2)
         
     def findMedianSortedArrays(self, nums1, nums2):
         """
