@@ -6,7 +6,7 @@ class Solution(object):
         if len1 == 0:
             return nums2[n-1]
         if len2 == 0:
-            return nums2[n-1]
+            return nums1[n-1]
         if n == 1:
             return min(nums1[0], nums2[0])
         mid1 = nums1[(len1+1)/2-1]
