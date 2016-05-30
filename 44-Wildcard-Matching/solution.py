@@ -11,19 +11,12 @@ class Solution(object):
             return False
         dp = [[False]*(len(p)+1) for _ in xrange(len(s)+1)]
         dp[0][0] = True
-        for i in xrange(len(s)+1):
-            if p[0] == '*':
-                dp[i][1] = True
+        if p[0] == '*':
+            dp[0][1] = True
         for i in xrange(len(s)):
-            for j in xrange(1, len(p)):
+            for j in xrange(len(p)):
                 if s[i] == p[j] or p[j] == '?':
                     dp[i+1][j+1] = dp[i][j]
                 elif p[j] == '*':
-                    '''
-                    for idx in xrange(i+1):
-                        if dp[idx+1][j]:
-                            dp[i+1][j+1] = True
-                            break
-                    '''
                     dp[i+1][j+1] = dp[i][j+1] or dp[i+1][j]
         return dp[-1][-1]
