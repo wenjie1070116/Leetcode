@@ -9,16 +9,16 @@ class Solution(object):
             return nums1[l1+n-1]
         if n == 1:
             return min(nums1[l1], nums2[l2])
-        mid1 = nums1[(l1+r1+1)/2-1]
-        mid2 = nums2[(l2+r2+1)/2-1]
+        mid1 = nums1[(l1+r1)/2]
+        mid2 = nums2[(l2+r2)/2]
         if mid1 < mid2:
-            if n-(l1+r1+1)/2 == 0:
+            if n == (l1+r1)/2+1:
                 return mid1
-            return self.findnth(nums1, (l1+r1+1)/2, r1, nums2, l2, r2, n-(l1+r1+1)/2)
+            return self.findnth(nums1, (l1+r1)/2+1, r1, nums2, l2, r2, n-(l1+r1)/2-1)
         else:
-            if n-(l2+r2+1)/2 == 0:
+            if n == (l2+r2)/2+1:
                 return mid2
-            return self.findnth(nums1, l1, r1, nums2, (l2+r2+1)/2, r2, n-(l2+r2+1)/2)
+            return self.findnth(nums1, l1, r1, nums2, (l2+r2)/2+1, r2, n-(l2+r2)/2-1)
         
     def findMedianSortedArrays(self, nums1, nums2):
         """
