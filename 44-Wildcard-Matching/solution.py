@@ -7,6 +7,8 @@ class Solution(object):
         """
         if not s and not p:
             return True
+        if not p:
+            return False
         dp = [[False]*(len(p)+1) for _ in xrange(len(s)+1)]
         dp[0][0] = True
         for i in xrange(len(s)+1):
