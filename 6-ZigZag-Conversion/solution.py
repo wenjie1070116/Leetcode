@@ -18,7 +18,8 @@ class Solution(object):
                 while idx < n:
                     res += s[idx]
                     idx += 2*numRows-2-2*i
-                    res += s[idx]
+                    if idx < n:
+                        res += s[idx]
                     idx += 2*i
         return res
         
