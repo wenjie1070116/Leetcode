@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: str
         """
         n = len(s) if s else 0
-        if n <= numRows or numRows == 1: return s
+        if n <= numRows or numRows == 1: return s # take care when numRows == 1
         res = ''
         for i in xrange(numRows):
             idx = i
