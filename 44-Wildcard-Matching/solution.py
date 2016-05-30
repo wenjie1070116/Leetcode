@@ -5,6 +5,20 @@ class Solution(object):
         :type p: str
         :rtype: bool
         """
+        n = len(s)
+        m = len(p)
+        f = [[False]*(m+1) for i in range(n+1)]
+        f[0][0] = True
+
+        for i in range(1, n+1):
+            for j in range(1, m+1):
+                f[i][j] = (
+                    (f[i-1][j-1] and
+                    (s[i-1] == p[j-1] or p[j-1] == '?' or p[j-1] == '*')) or
+                    f[i-1][j] and p[j-1] == '*')
+
+        return f[n][m]
+        '''
         if s == p:
             return True
         if not p:
@@ -20,3 +34,4 @@ class Solution(object):
                 elif p[j] == '*':
                     dp[i+1][j+1] = dp[i][j+1]
         return dp[-1][-1]
+        '''
