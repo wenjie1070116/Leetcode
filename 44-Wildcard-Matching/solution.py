@@ -5,7 +5,7 @@ class Solution(object):
         :type p: str
         :rtype: bool
         """
-        if not s and not p or s == p:
+        if s == p:
             return True
         if not p:
             return False
