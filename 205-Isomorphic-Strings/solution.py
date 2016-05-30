@@ -7,7 +7,7 @@ class Solution(object):
         """
         if not s and not t: return True
         if len(s) != len(t): return False
-        hashmap1 = {}
+        hashmap1 = {} # two hashmap check, in case of this kind of example: 'aa', 'ab'
         hashmap2 = {}
         for i in xrange(len(s)):
             if t[i] in hashmap2:
