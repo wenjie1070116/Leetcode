@@ -16,7 +16,7 @@ class Solution(object):
         area1 = self.Area(A, C, B, D)
         area2 = self.Area(E, G, F, H)
         intersect_area = 0
-        if not (E >= C or G <= A or H <= B or F >= D):
+        if not (E >= C or G <= A or H <= B or F >= D): # check whether two rectangle overlap
             intersect_area = self.Area(max(A, E), min(C, G), min(H, D), max(F, B))
         return area1+area2-intersect_area
         
