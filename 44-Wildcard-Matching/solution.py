@@ -25,5 +25,5 @@ class Solution(object):
                             dp[i+1][j+1] = True
                             break
                     '''
-                    dp[i+1][j+1] = dp[i][j+1]
+                    dp[i+1][j+1] = dp[i][j+1] or dp[i+1][j]
         return dp[-1][-1]
