@@ -15,8 +15,8 @@ class Solution(object):
             dp[0][1] = True
         for i in xrange(len(s)):
             for j in xrange(len(p)):
-                if s[i] == p[j] or p[j] == '?':
+                if s[i] == p[j] or p[j] == '?' or p[j] == '*':
                     dp[i+1][j+1] = dp[i][j]
                 elif p[j] == '*':
-                    dp[i+1][j+1] = dp[i][j+1] or dp[i+1][j]
+                    dp[i+1][j+1] = dp[i][j+1]
         return dp[-1][-1]
