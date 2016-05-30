@@ -5,7 +5,7 @@ class Solution(object):
         :type p: str
         :rtype: bool
         """
-        if not s and not p:
+        if not s and not p or s == p:
             return True
         if not p:
             return False
@@ -19,8 +19,11 @@ class Solution(object):
                 if s[i] == p[j] or p[j] == '?':
                     dp[i+1][j+1] = dp[i][j]
                 elif p[j] == '*':
+                    '''
                     for idx in xrange(i+1):
                         if dp[idx+1][j]:
                             dp[i+1][j+1] = True
                             break
+                    '''
+                    dp[i+1][j+1] = dp[i][j+1]
         return dp[-1][-1]
