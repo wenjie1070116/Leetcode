@@ -8,7 +8,7 @@ class Solution(object):
         i = 0
         while True:
             if i == len(strs[0]):
-                return strs[0][:i]
+                return strs[0][:i] # check whether i out of strs[0] index
             target = strs[0][i]
             for j in xrange(1, len(strs)):
                 if i == len(strs[j]) or strs[j][i] != target:
