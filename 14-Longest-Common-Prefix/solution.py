@@ -4,7 +4,7 @@ class Solution(object):
         :type strs: List[str]
         :rtype: str
         """
-        if not strs: return ''
+        if not strs or len(strs[0]) == 0: return '' # take care that strs[0] may be '' empty
         i = 0
         while True:
             target = strs[0][i]
