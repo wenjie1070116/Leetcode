@@ -10,6 +10,7 @@ class Solution(object):
         sign = 1
         if dividend < 0 and divisor > 0 or dividend > 0 and divisor < 0: sign = -1
         d, r = abs(dividend), abs(divisor)
+        if r == 1: return sign*d
         res = 0
         while d >= r:
             temp = r
@@ -19,7 +20,7 @@ class Solution(object):
                 idx <<= 1
             d = d-temp
             res += idx
-        return res
+        return sign*res
                 
                 
         
