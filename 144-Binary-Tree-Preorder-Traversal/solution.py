@@ -20,7 +20,7 @@ class Solution(object):
             if node.right:
                 stack.append(node.right)
             if node.left:
-                stack.apppend(node.left)
+                stack.append(node.left)
         return res
             
         
