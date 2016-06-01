@@ -11,6 +11,7 @@ class Solution(object):
         idx = 0
         while total&1 != 1:
             idx += 1
+            total >>= 1
         num1, num2 = 0, 0
         mask = 1 << idx
         for num in nums:
