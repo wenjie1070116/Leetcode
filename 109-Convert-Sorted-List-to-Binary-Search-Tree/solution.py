@@ -22,14 +22,13 @@ class Solution(object):
         def helper(length):
             if length <= 0: return None
             left = helper(length/2)
-            root = TreeNode(head.val)
-            head = head.next
+            root = TreeNode(self.node.val)
+            self.node = self.node.next
             root.left = left
             root.right = healper(length-length/2-1)
             return root
+        self.node = head
         return helper(count)
-            
-            
     
     '''
     def findmid(self, head):
