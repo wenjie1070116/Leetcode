@@ -26,7 +26,6 @@ class Solution(object):
         :rtype: TreeNode
         """
         if not head: return None
-        #if not head.next: return TreeNode(head.val)
         prev = self.findmid(head)
         if not prev:
             mid = head
