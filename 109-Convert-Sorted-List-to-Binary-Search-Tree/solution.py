@@ -12,6 +12,26 @@
 #         self.right = None
 
 class Solution(object):
+    def sortedListToBST(self, head):
+        if not head: return None
+        node = head
+        count = 0
+        while node:
+            count += 1
+            node = node.next
+        def helper(length):
+            if length <= 0: return None
+            left = helper(length/2)
+            root = TreeNode(head.val)
+            head = head.next
+            root.left = left
+            root.right = healper(length-length/2-1)
+            return root
+        return helper(count)
+            
+            
+    
+    '''
     def findmid(self, head):
         prev = None
         slow = fast = head
@@ -39,3 +59,4 @@ class Solution(object):
             prev.next = None
             root.left = self.sortedListToBST(head)
         return root
+        '''
