@@ -19,9 +19,10 @@ class Solution(object):
             if head not in copied:
                 copied[head] = RandomListNode(head.label)
             copy = copied[head]
-            if head.random and head.random not in copied:
-                copied[head.random] = RandomListNode(head.random.label)
-            copy.random = copied[head.random]
+            if head.random:
+                if head.random not in copied:
+                    copied[head.random] = RandomListNode(head.random.label)
+                copy.random = copied[head.random]
             node.next = copy
             node = node.next
             head = head.next
