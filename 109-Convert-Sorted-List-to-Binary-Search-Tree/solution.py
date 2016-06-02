@@ -13,23 +13,28 @@
 
 class Solution(object):
     def findmid(self, head):
-        if not head or not head.next:
-            return head
+        if not head: return None
+        dummy = ListNode(0)
+        dummy.next = head
+        prev = dummy
         slow = fast = head
         while fast.next and fast.next.next:
+            prev = slow
             slow = slow.next
             fast = fast.next.next
-        return slow
+        return prev
     def sortedListToBST(self, head):
         """
         :type head: ListNode
         :rtype: TreeNode
         """
         if not head: return None
-        mid = self.findmid(head)
+        dummy = ListNode(0)
+        dummy.next = head
+        prev = self.findmid(head)
+        mid = prev.next
         root = TreeNode(mid.val)
         root.right = self.sortedListToBST(mid.next)
-        mid.next = None
-        root.left = self.sortedListToBST(head)
+        prev.next = None
+        root.left = self.sortedListToBST(dummy.next)
         return root
-        
