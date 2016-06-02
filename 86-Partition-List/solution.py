@@ -13,11 +13,12 @@ class Solution(object):
         """
         if not head or not head.next: return head
         dummy = ListNode(0)
+        dummy.next = head
         node = dummy
-        while node.next and node.next < x:
+        while node.next and node.next.val < x:
                 node = node.next
         Next = node.next
-        while Next.next:
+        while Next and Next.next:
             if Next.next.val >= x:
                 Next = Next.next
             else:
