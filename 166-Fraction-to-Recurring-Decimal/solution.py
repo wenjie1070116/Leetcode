@@ -5,6 +5,7 @@ class Solution(object):
         :type denominator: int
         :rtype: str
         """
+        # when doing mathmatic operation, you have to be careful whether it's positive, negative or int, float...
         sign = '-' if numerator*denominator < 0 else ''
         numerator = abs(numerator)
         denominator = abs(denominator)
