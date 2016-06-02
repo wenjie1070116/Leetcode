@@ -14,9 +14,8 @@
 class Solution(object):
     def findmid(self, head):
         if not head: return None
-        dummy = ListNode(0)
-        dummy.next = head
-        prev = dummy
+        if not head.next: return head
+        prev = None
         slow = fast = head
         while fast.next and fast.next.next:
             prev = slow
@@ -29,6 +28,7 @@ class Solution(object):
         :rtype: TreeNode
         """
         if not head: return None
+        if not head.next: return TreeNode(head.val)
         dummy = ListNode(0)
         dummy.next = head
         prev = self.findmid(head)
