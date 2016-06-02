@@ -13,5 +13,5 @@ class Solution(object):
             res |= (temp%3)<<i
         if res <= 2**31-1:
             return res
-        return -2**32+res
+        return -1<<32|res
         
