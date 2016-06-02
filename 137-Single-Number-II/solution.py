@@ -11,7 +11,7 @@ class Solution(object):
                 temp += nums[j]&1
                 nums[j] >>= 1
             res |= (temp%3)<<i
-        if res <= 2**31-1:
+        if res <= 2**31-1: # take care of negative number
             return res
         return -1<<32|res
         
