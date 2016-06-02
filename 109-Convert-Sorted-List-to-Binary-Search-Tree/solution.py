@@ -25,7 +25,7 @@ class Solution(object):
             root = TreeNode(self.node.val)
             self.node = self.node.next
             root.left = left
-            root.right = healper(length-length/2-1)
+            root.right = helper(length-length/2-1)
             return root
         self.node = head
         return helper(count)
