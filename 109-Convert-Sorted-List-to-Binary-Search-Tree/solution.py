@@ -38,5 +38,5 @@ class Solution(object):
             root = TreeNode(mid.val)
             root.right = self.sortedListToBST(mid.next)
             prev.next = None
-            root.left = self.sortedListToBST(dummy.next)
+            root.left = self.sortedListToBST(head)
         return root
