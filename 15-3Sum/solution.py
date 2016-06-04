@@ -15,7 +15,7 @@ class Solution(object):
                 if nums[start]+nums[end] == -nums[i]:
                     res.append([nums[i], nums[start], nums[end]])
                     start += 1
-                    while nums[start] == nums[start-1]:
+                    while start < end and nums[start] == nums[start-1]:
                         start += 1
                 elif nums[start]+nums[end] < -nums[i]:
                     start += 1
