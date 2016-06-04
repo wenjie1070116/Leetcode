@@ -13,7 +13,6 @@ class Solution(object):
         if not intervals or len(intervals) < 2:
             return intervals
         intervals = sorted(intervals, key=lambda x: x.start)
-        intervals.sort(cmp=comp)
         res = [intervals[0]]
         for i in xrange(1, len(intervals)):
             if intervals[i].start > res[-1].end:
