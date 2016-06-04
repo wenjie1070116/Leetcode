@@ -17,7 +17,7 @@ class Solution(object):
                 count += 1
             j -= 1
             i += 1
-            while i < n and matrix[i][j] != 0:
+            while i < m and matrix[i][j] != 0:
                 res.append(matrix[i][j])
                 matrix[i][j] = 0
                 i += 1
