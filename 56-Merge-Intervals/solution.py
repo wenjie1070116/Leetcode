@@ -15,13 +15,9 @@ class Solution(object):
         def comp(interval1, interval2):
             if interval1.start < interval2.start:
                 return -1
-            elif interval1.start > interval2.start:
-                return 1
             else:
-                if interval1.end < interval2.end:
-                    return -1
-                else:
-                    return 1
+                return 1
+
         intervals.sort(cmp=comp)
         res = [intervals[0]]
         for i in xrange(1, len(intervals)):
