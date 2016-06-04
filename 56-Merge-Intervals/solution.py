@@ -28,6 +28,6 @@ class Solution(object):
             if intervals[i].start > res[-1].end:
                 res.append(intervals[i])
             else:
-                res[-1].start = min(res[-1].start, intervals[i].start)
+                #res[-1].start = min(res[-1].start, intervals[i].start)
                 res[-1].end = max(res[-1].end, intervals[i].end)
         return res
