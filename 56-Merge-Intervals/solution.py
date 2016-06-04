@@ -12,12 +12,7 @@ class Solution(object):
         """
         if not intervals or len(intervals) < 2:
             return intervals
-        def comp(interval1, interval2):
-            if interval1.start < interval2.start:
-                return -1
-            else:
-                return 1
-
+        intervals = sorted(intervals, key=lambda x: x.start)
         intervals.sort(cmp=comp)
         res = [intervals[0]]
         for i in xrange(1, len(intervals)):
