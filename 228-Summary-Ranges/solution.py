@@ -5,6 +5,25 @@ class Solution(object):
         :rtype: List[str]
         """
         if not nums: return []
+        nums.append('#')
+        start = end = 0
+        idx = 1
+        res = []
+        while idx < len(nums):
+            if nums[idx] == nums[end]+1:
+                end += 1
+            else:
+                if start == end:
+                    res.append(str(nums[end]))
+                else:
+                    res.append(str(nums[start])+'->'+str(nums[end]))
+                start = end = idx
+            idx += 1
+                
+        return res
+            
+        '''
+        if not nums: return []
         idx = 0
         res = []
         temp = []
@@ -23,3 +42,4 @@ class Solution(object):
         else:
             res.append(str(temp[0])+'->'+str(temp[-1]))
         return res
+        '''
