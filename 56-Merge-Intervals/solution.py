@@ -23,7 +23,7 @@ class Solution(object):
                 else:
                     return 1
         intervals.sort(cmp=comp)
-        res = [interval[0]]
+        res = [intervals[0]]
         for i in xrange(1, len(intervals)):
             if intervals[i].start > res[-1].end:
                 res.append(intervals[i])
