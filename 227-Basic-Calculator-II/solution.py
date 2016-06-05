@@ -20,7 +20,8 @@ class Solution(object):
             elif ch in '+-*/':
                 if ch in '*/':
                     a = nums.pop()
-                    idx += 1
+                    while s[idx] == ' ':
+                        idx += 1
                     b = int(s[idx])
                     nums.append(hashmap[ch](a,b))
                 else:
