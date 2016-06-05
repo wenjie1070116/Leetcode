@@ -13,7 +13,9 @@ class Solution(object):
         nums = []
         ops = []
         for ch in s:
-            if ch.isalnum():
+            if ch == ' ':
+                continue
+            elif ch.isalnum():
                 nums.append(int(ch))
             else:
                 if ch in '*/':
