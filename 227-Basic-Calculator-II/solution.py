@@ -12,18 +12,20 @@ class Solution(object):
         hashmap = {'+':operator.add, '-':operator.sub, '*':operator.mul, '/':div}
         nums = []
         ops = []
-        for ch in s:
-            if ch == ' ':
-                continue
-            elif ch.isalnum():
+        idx = 0
+        while idx < len(s):
+            ch = s[idx]
+            if ch.isalnum() and ch != ' ':
                 nums.append(int(ch))
-            else:
+            elif ch in '+-*/':
                 if ch in '*/':
-                    b = nums.pop()
                     a = nums.pop()
+                    idx += 1
+                    b = int(s[idx])
                     nums.append(hashmap[ch](a,b))
                 else:
                     ops.append(ch)
+            idx += 1
         while ops:
             op = ops.pop()
             b = nums.pop()
