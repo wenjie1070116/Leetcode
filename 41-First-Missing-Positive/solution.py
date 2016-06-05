@@ -7,7 +7,7 @@ class Solution(object):
         if not nums:
             return 1
         for i in xrange(len(nums)):
-            while nums[i] > 0 and nums[i] != i+1 and nums[i]-1 < len(nums) and nums[i] != nums[nums[i]-1]:
+            while nums[i] > 0 and nums[i] != i+1 and nums[i] <= len(nums) and nums[i] != nums[nums[i]-1]:
                 temp = nums[i]
                 nums[i] = nums[nums[i]-1] 
                 nums[nums[i]-1] = temp
