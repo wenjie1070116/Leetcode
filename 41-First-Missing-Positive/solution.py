@@ -8,6 +8,8 @@ class Solution(object):
             return 1
         for i in xrange(len(nums)):
             while nums[i] > 0 and nums[i] != i+1 and nums[i]-1 < len(nums) and nums[i] != nums[nums[i]-1]:
+                # can not write as 'nums[i], nums[nums[i]-1] = nums[nums[i]-1], nums[i]', cause nums[nums[i]-1] depends on 
+                # nums[i] but this sentence nums[i] has changed at the very beginning, be careful about that
                 nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
         for i in xrange(len(nums)):
             if nums[i] != i+1:
