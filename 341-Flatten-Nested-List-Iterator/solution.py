@@ -39,7 +39,7 @@ class NestedIterator(object):
         """
         cur, idx = self.NL[-1]
         self.NL[-1][1] += 1
-        return cur.getInteger()
+        return cur[idx].getInteger()
         
 
     def hasNext(self):
@@ -55,7 +55,7 @@ class NestedIterator(object):
                     return True
                 else:
                     self.NL[-1][1] += 1
-                    self.NL.append([cur.getList(),0])
+                    self.NL.append([cur[idx].getList(),0])
         return False
         
         
