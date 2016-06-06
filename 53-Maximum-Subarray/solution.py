@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         if not nums: return 0
-        res = -sys.maxint
+        res = -sys.maxint # initial value of res should be set to -sys.maxint since num in nums might < 0
         total = 0
         for i in xrange(len(nums)):
             total += nums[i]
