@@ -30,7 +30,7 @@ class NestedIterator(object):
         Initialize your data structure here.
         :type nestedList: List[NestedInteger]
         """
-        self.NL = [(nestedList, 0)]
+        self.NL = [[nestedList, 0]]
         
 
     def next(self):
@@ -55,7 +55,7 @@ class NestedIterator(object):
                     return True
                 else:
                     self.NL[-1][1] += 1
-                    self.NL.append((cur.getList(),0))
+                    self.NL.append([cur.getList(),0])
         return False
         
         
