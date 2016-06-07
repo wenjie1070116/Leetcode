@@ -6,32 +6,19 @@ class Solution(object):
         """
         if not matrix: return 0
         m, n = len(matrix), len(matrix[0])
-        visited = [[0]*n for _ in xrange(m)]
+        dp = [[0]*n for _ in xrange(m)]
         
-        def dfs(x, y, visited, temp, res):
-            mark = False
-            for dx, dy in zip((1, 0, -1, 0), (0, 1, 0, -1)):
-                nx, ny = x+dx, y+dy
-                if 0<=nx<m and 0<=ny<n and matrix[nx][ny] > matrix[x][y]:
-                    mark = True
-                    if not visited[nx][ny]:
-                        visited[nx][ny] = 1
-                        dfs(nx, ny, visited, temp+1, res)
-                        visited[nx][ny] = 0
-                    else:
-                        res[0] = max(res[0], temp+visited[nx][ny])
-            if not mark:
-                res[0] = max(res[0], temp)
-                return
+        def dfs(i, j):
+            for dx, dy in zip([0, -1, 0, 1],[-1,0,1,0]):
+                ni, nj = i+dx, j+dy
+                if 0<=ni<m and 0<=nj<n and matrix[ni][nj] > matrix[i][j]:
+                    if not dp[ni][nj]: dp[ni][nj] = dfs(ni, nj)
+                    dp[i][j] = max(dp[i][j], dp[ni][nj]+1)
+            dp[i][j] = max(dp[i][j], 1)
+            return dp[i][j]
         
-        res = [0]
         for i in xrange(m):
             for j in xrange(n):
-                if not visited[i][j]:
-                    dfs(i, j, visited, 1, res)
-                    visited[i][j] = res[0]
-                
-        return res[0]
-                    
-                
-        
+                if not dp[i][j]:
+                    dp[i][j] = dfs(i, j)
+        return max([max(x) for x in dp])
