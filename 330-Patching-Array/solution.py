@@ -5,6 +5,17 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
+        # a better way to write the code
+        idx, total, res = 0, 1, 0
+        while total <= n:
+            if idx < len(nums) and nums[idx] <= total:
+                total += nums[idx]
+                idx += 1
+            else:
+                total <<= 1
+                res += 1
+        return res
+        '''
         cur, total, res, i = 1, 0, 0, 0
         while i < len(nums) and total < n:
             if nums[i] > cur:
@@ -21,4 +32,5 @@ class Solution(object):
             cur = total+1
             res += 1
         return res
+        '''
         
