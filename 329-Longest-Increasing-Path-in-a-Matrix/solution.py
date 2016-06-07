@@ -12,11 +12,14 @@ class Solution(object):
             mark = False
             for dx, dy in zip((1, 0, -1, 0), (0, 1, 0, -1)):
                 nx, ny = x+dx, y+dy
-                if 0<=nx<m and 0<=ny<n and not visited[nx][ny] and matrix[nx][ny] > matrix[x][y]:
+                if 0<=nx<m and 0<=ny<n and matrix[nx][ny] > matrix[x][y]:
                     mark = True
-                    visited[nx][ny] = 1
-                    dfs(nx, ny, visited, temp+1, res)
-                    visited[nx][ny] = 0
+                    if not visited[nx][ny]:
+                        visited[nx][ny] = 1
+                        dfs(nx, ny, visited, temp+1, res)
+                        visited[nx][ny] = 0
+                    else:
+                        res[0] = max(res[0], temp+visited[nx][ny])
             if not mark:
                 res[0] = max(res[0], temp)
                 return
@@ -26,7 +29,7 @@ class Solution(object):
             for j in xrange(n):
                 if not visited[i][j]:
                     dfs(i, j, visited, 1, res)
-                    visited[i][j] = 1
+                    visited[i][j] = res[0]
                 
         return res[0]
                     
