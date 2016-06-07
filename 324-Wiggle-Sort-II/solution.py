@@ -5,7 +5,6 @@ class Solution(object):
         :rtype: void Do not return anything, modify nums in-place instead.
         """
         if not nums: return nums
-        snums = nums.sort()
-        for i in range(0, len(nums), 2)+range(1, len(nums), 2):
-            nums[i] = snums[i]
-        
+        snums = sorted(nums)
+        for i in range(1, len(nums), 2)+range(0, len(nums), 2):
+            nums[i] = snums.pop()
