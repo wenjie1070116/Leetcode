@@ -24,7 +24,10 @@ class Solution(object):
         res = [0]
         for i in xrange(m):
             for j in xrange(n):
-                dfs(i, j, visited, 1, res)
+                if not visited[i][j]:
+                    dfs(i, j, visited, 1, res)
+                    visited[i][j] = 1
+                
         return res[0]
                     
                 
