@@ -14,7 +14,7 @@ class Solution(object):
                 start, end = -1, len(dp)
                 while start + 1 < end:
                     mid = start + (end-start)/2
-                    if dp[mid][1] > envelopes[i][1]:
+                    if dp[mid][1] >= envelopes[i][1]:
                         end = mid
                     else:
                         start = mid
