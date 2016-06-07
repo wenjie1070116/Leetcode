@@ -13,7 +13,7 @@ class Solution(object):
                     cur = total+1
                     res += 1
             else:
-                total += nums[i]
+                total += nums[i] # here total += nums[i] instead of cur since nums[i] <= cur
                 cur = total+1
                 i += 1
         while total < n:
