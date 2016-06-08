@@ -10,7 +10,7 @@ class Solution(object):
         for i in xrange(amount):
             if dp[i] < 0:
                 continue
-            for coin in coins:
+            for c in coins:
                 if i+c < amount:
                     continue
                 if dp[i+c] < 0 or dp[i+c] > dp[i]+1:
