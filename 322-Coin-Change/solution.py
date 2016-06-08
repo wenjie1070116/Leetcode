@@ -6,11 +6,13 @@ class Solution(object):
         :rtype: int
         """
         if amount < 0 or not coins: return -1
-        dp = [0]+[sys.maxint]*amount
-        for coin in coins:
-            for i in xrange(1, len(dp)):
-                if i-coin >= 0:
-                    dp[i] = min(dp[i], dp[i-coin]+1)
-        res = dp[-1] if dp[-1] != sys.maxint else -1
-        return res
-        
+        dp = [0]+[-1]*amount
+        for i in xrange(amount):
+            if dp[i] < 0:
+                continue
+            for coin in coins:
+                if i+c < amount:
+                    continue
+                if dp[i+c] < 0 or dp[i+c] > dp[i]+1:
+                    dp[i+c] = dp[i]+1
+        return dp[-1]
