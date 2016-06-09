@@ -6,32 +6,27 @@ class Solution(object):
         """
         if not tickets: return []
         hashmap = {}
+        n = len(tickets)+1
         for ticket in tickets:
             if ticket[0] not in hashmap:
                 hashmap[ticket[0]] = [ticket[1]]
             else:
                 hashmap[ticket[0]].append(ticket[1])
         
-        def dfs(hashmap, cur, temp, res):
-            if not hashmap:
-                res.append([]+temp)
-                return res
-            newhashmap = hashmap
-            for pla in sorted(newhashmap[cur]):
-                temp.append(pla)
-                newhashmap[cur].remove(pla)
-                if not newhashmap[cur]:
-                    newhashmap.pop(cur)
-                if dfs(newhashmap, pla, temp, res):
+        def dfs(hashmap, cur, res):
+            if len(res) == n:
+                return True
+            if cur not in hashmap: return False
+            places = sorted(hashmap[cur])
+            for pla in places:
+                res.append(pla)
+                hashmap[cur].remove(pla)
+                if dfs(hashmap, pla, res):
                     return res
-                temp.pop()
-                if cur not in newhashmap:
-                    newhashmap[cur] = pla
-                else:
-                    newhashmap[cur].append(pla)
-            return False
+                res.pop()
+                hashmap[cur].append(pla)
         
-        return dfs(hashmap, 'JFK', ['JFK'], [])
+        return dfs(hashmap, 'JFK', ['JFK'])
         
         
                 
