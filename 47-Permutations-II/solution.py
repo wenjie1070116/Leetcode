@@ -13,11 +13,12 @@ class Solution(object):
             for i in xrange(len(nums)):
                 if i != 0 and nums[i] == nums[i-1] and i-1 not in visited:
                     continue
-                temp.append(nums[i])
-                visited.add(i)
-                dfs(visited, temp, res)
-                temp.pop()
-                visited.remove(i)
+                if i not in visited:
+                    temp.append(nums[i])
+                    visited.add(i)
+                    dfs(visited, temp, res)
+                    temp.pop()
+                    visited.remove(i)
         
         visited = set()
         res = []
