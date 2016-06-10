@@ -38,7 +38,7 @@ class NumArray(object):
             self.updateTree(root.right, i, val)
         else:
             self.updateTree(root.left, i, val)
-        root.sum = root.left.sum+root.right.sum
+        root.Sum = root.left.Sum+root.right.Sum
     
     
     def update(self, i, val):
