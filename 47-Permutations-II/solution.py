@@ -10,7 +10,7 @@ class Solution(object):
             if len(temp) == len(nums):
                 res.append([]+temp)
                 return
-            for i in xrange(nums):
+            for i in xrange(len(nums)):
                 if i != 1 and nums[i] == nums[i-1] and i-1 not in visited:
                     continue
                 temp.append(nums[i])
