@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         if not nums: return []
-        
+        nums.sort()
         def dfs(visited, temp, res):
             if len(temp) == len(nums):
                 res.append([]+temp)
