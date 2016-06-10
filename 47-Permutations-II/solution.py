@@ -11,7 +11,7 @@ class Solution(object):
                 res.append([]+temp)
                 return
             for i in xrange(len(nums)):
-                if i != 1 and nums[i] == nums[i-1] and i-1 not in visited:
+                if i != 0 and nums[i] == nums[i-1] and i-1 not in visited:
                     continue
                 temp.append(nums[i])
                 visited.add(i)
