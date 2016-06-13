@@ -4,6 +4,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        if not nums: return 1
+        numset = set(nums)
+        n = len(nums)
+        for i in xrange(1, n+2):
+            if i not in numset:
+                return i
+        
+        
+        '''
         if not nums:
             return 1
         for i in xrange(len(nums)):
@@ -15,4 +24,5 @@ class Solution(object):
             if nums[i] != i+1:
                 return i+1
         return len(nums)+1
+        '''
         
