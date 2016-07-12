@@ -12,14 +12,11 @@ class Solution(object):
         :type sum: int
         :rtype: bool
         """
-        if not root: return False
-        def dfs(node, Sum):
-            if not node.left and not node.right and Sum == sum:
-                    return True
-            if node.left and dfs(node.left, Sum+node.left.val):
-                return True
-            if node.right and dfs(node.right, Sum+node.right.val):
-                return True
-        if dfs(root, root.val): return True
-        return False        
+        if sum==root.val and not root.left and not root.right:
+            return True
+        if root.left and self.hasPathSum(root.left, sum-root.val):
+            return True
+        if root.right and self.hasPathSum(root.right, sum-root.val):
+            return True
+        return False       
         
