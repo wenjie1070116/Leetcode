@@ -12,6 +12,7 @@ class Solution(object):
         :type sum: int
         :rtype: bool
         """
+        if not root: return False
         if sum==root.val and not root.left and not root.right:
             return True
         if root.left and self.hasPathSum(root.left, sum-root.val):
