@@ -15,15 +15,18 @@ class Solution(object):
                 if 0<=nx<m and 0<=ny<n and board[nx][ny] == 'O':
                     change(nx, ny)
         
-        for i in (0, m):
+        """
+        for i in xrange(m):
             for j in xrange(n):
-                if board[i][j] == 'O':
+                if (i == 0 or i == m-1 or j == 0 or j == n-1) and board[i][j] == 'O':
                     change(i, j)
-        
-        for j in (0, n):
-            for i in xrange(1, m-1):
-                if board[i][j] == 'O':
-                    change(i, j)
+        """
+        change(0,0)
+        change(0,2)
+        change(2,0)
+        change(2,2)
+       
+        print board
         
         for i in xrange(m):
             for j in xrange(n):
