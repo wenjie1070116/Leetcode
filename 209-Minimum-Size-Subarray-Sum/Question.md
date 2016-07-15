@@ -40,4 +40,4 @@ Special thanks to [@Freezen](https://oj.leetcode.com/discuss/user/Freezen) for a
 
 <div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton">[(H) Minimum Window Substring](/problems/minimum-window-substring/) [(E) Maximum Size Subarray Sum Equals k](/problems/maximum-size-subarray-sum-equals-k/)</span></div>
+<span class="hidebutton">[(H) Minimum Window Substring](/problems/minimum-window-substring/) [(M) Maximum Size Subarray Sum Equals k](/problems/maximum-size-subarray-sum-equals-k/)</span></div>
