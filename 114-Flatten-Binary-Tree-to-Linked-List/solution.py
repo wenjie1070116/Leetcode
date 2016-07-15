@@ -11,14 +11,15 @@ class Solution(object):
         :type root: TreeNode
         :rtype: void Do not return anything, modify root in-place instead.
         """
-        if not root: return
-        left = self.flatten(root.left)
-        right = self.flatten(root.right)
+        if not root: return 
+        self.flatten(root.left)
+        self.flatten(root.right)
+        left = root.left
+        if not left: return
         left_tail = left
         while left_tail.right:
             left_tail = left_tail.right
-        left_tail.right = right
+        left_tail.right = root.right
         root.right = left
         root.left = None
-        return root
-        
+        return
