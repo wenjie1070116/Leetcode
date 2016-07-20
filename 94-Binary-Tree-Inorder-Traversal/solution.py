@@ -12,15 +12,14 @@ class Solution(object):
         :rtype: List[int]
         """
         if not root: return []
-        stack = []
         res = []
-        while root or stack:
+        nodes = []
+        while nodes or root:
             while root:
-                stack.append(root)
+                nodes.append(root)
                 root = root.left
-            root = stack.pop()
+            root = nodes.pop()
             res.append(root.val)
             root = root.right
         return res
-                
         
