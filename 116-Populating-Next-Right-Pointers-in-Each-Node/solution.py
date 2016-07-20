@@ -12,7 +12,7 @@ class Solution(object):
         :type root: TreeLinkNode
         :rtype: nothing
         """
-        if not root: return
+        if not root or (not root.left and not root.right): return
         if root.left and root.right:
             root.left.next = root.right
         if root.next:
