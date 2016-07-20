@@ -21,9 +21,9 @@ class Solution(object):
                     temp.append(node.left)
                 if node.right:
                     temp.append(node.right)
-            if temp:
+            nodes = temp
+            if nodes:
                 res.append(temp[-1].val)
-                nodes = temp
         return res
             
         
