@@ -28,7 +28,7 @@ class BSTIterator(object):
         :rtype: int
         """
         while self.root:
-            self.nodes.append(root)
+            self.nodes.append(self.root)
             self.root = self.root.left
         self.root = self.nodes.pop()
         val = self.root.val
