@@ -17,7 +17,6 @@ class Solution(object):
                 if Min == 1 or right == len(nums)-1: return Min
                 Sum -= nums[left]
                 left += 1
-
             right += 1
         return 0 if Min == sys.maxint else Min
                 
