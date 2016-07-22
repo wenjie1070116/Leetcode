@@ -17,7 +17,7 @@ class Solution(object):
                     left[x-y] = True
                     right[x+y] = True
                     vertical[y] = True
-                    dfs(x+1, left, right, vertical)
+                    dfs(x+1, left, right, vertical, res)
                     left[x-y] = False
                     right[x+y] = False
                     vertical[y] = False
