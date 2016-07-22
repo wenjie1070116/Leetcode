@@ -25,9 +25,11 @@ class Solution(object):
                 dfs(root.left)
             if root.right:
                 dfs(root.right)
-        temp = self.first.val
-        self.first.val = self.second.val
-        self.second.val = temp
+        dfs(root)
+        if self.first and self.right:
+            temp = self.first.val
+            self.first.val = self.second.val
+            self.second.val = temp
         return
             
         
