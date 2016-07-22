@@ -4,9 +4,9 @@ class Solution(object):
         :type s: str
         :rtype: List[str]
         """
-        if not s or len(s) < 4:
+        if not s or len(s) < 4 or len(s) > 12:
             return []
-        
+
         def dfs(pos, temp, res):
             if pos == len(s):
                 if len(temp) == 4:
