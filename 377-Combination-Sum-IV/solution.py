@@ -32,5 +32,5 @@ class Solution(object):
                 dfs(i, temp, res)
                 temp.pop()
         res = [0]
-        dfs(0, temp, res)
+        dfs(0, [], res)
         return res[0]
