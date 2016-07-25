@@ -17,7 +17,7 @@ class Solution(object):
         res = {i for i in xrange(n)}
         while len(res) > 2:
             temp = []
-            for i in xrange(n):
+            for i in res:
                 if indegree[i] == 1:
                     temp.append(i)
             for idx in temp:
