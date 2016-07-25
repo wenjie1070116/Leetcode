@@ -9,7 +9,8 @@ class Solution(object):
         dp[0] = 1
         for i in xrange(target+1):
             for num in nums:
-                dp[i+num] += dp[i]
+                if i+num <= target:
+                    dp[i+num] += dp[i]
         return dp[-1]
     
     """ TLE
