@@ -21,6 +21,7 @@ class Solution(object):
         :rtype: int
         """
         if not nums: return 0
+        nums.sort()
         def dfs(pos, temp, res):
             if sum(temp) == target:
                 res[0] += self.situations(temp)
