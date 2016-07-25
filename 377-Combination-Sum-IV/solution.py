@@ -1,5 +1,18 @@
 class Solution(object):
+    def combinationSum4(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        dp = [0]*(target+1)
+        dp[0] = 1
+        for i in xrange(target+1):
+            for num in nums:
+                dp[x+num] += dp[x]
+        return dp[-1]
     
+    """ TLE
     def factor(self, n):
         res = 1
         for i in xrange(1, n+1):
@@ -35,3 +48,4 @@ class Solution(object):
         res = [0]
         dfs(0, [], res)
         return res[0]
+    """
