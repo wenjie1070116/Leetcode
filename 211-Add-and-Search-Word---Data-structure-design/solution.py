@@ -21,7 +21,7 @@ class WordDictionary(object):
         for ch in word:
             idx = ord(ch)-ord('a')
             if not root.children[idx]:
-                root.children[idx] = TrieNode
+                root.children[idx] = TrieNode()
             root = root.children[idx]
         root.isword = word
     
