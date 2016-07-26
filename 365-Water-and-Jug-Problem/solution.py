@@ -11,6 +11,8 @@ class Solution(object):
         :type z: int
         :rtype: bool
         """
+        if x == 0: return y==z
+        if y == 0: return x==z
         gcd = self.GCD(x, y)
         X = x/gcd
         Y = y/gcd
