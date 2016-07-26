@@ -12,7 +12,7 @@ class Solution(object):
                 if p[j-1] == '*':
                     a = dp[i][j-2] if j-2 >= 0 else False
                     b = dp[i][j-1]
-                    c = dp[i-1][j] if (i-2 >= 0 and (p[i-2] == '.' or s[i-2] == p[j-2])) else False
+                    c = dp[i-1][j] if (i-2 >= 0 and (p[j-2] == '.' or s[i-1] == p[j-2])) else False
                     dp[i][j] = a or b or c
                 elif i == 0:
                     dp[i][j] = False
