@@ -9,17 +9,18 @@ class Solution(object):
     def __init__(self):
         self.first = None
         self.second = None
+        self.last = TreeNode(-sys.maxint)
     
     def inorder(self, root):
         if not root:
             return
-        left = self.inorder(root.left)
-        if left.val > root.val:
-            if not self.first:
-                self.first = left
-            elif not self.second:
-                self.second = root
-        right = self.inorder(root.right)
+        self.inorder(root.left)
+        if not self.first and root.val < self.last.val:
+            self.first = self.last
+        if self.first and root.val < self.last.val:
+            self.second = root
+        self.last = root
+        self.inorder(root.right)
         
     def recoverTree(self, root):
         """
