@@ -32,6 +32,5 @@ class Solution(object):
         temp = self.first.val
         self.first.val = self.second.val
         self.second.val = temp
-        return
         
         
