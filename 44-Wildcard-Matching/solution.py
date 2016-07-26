@@ -25,4 +25,4 @@ class Solution(object):
                 return False
         while p_i < len(p) and p[p_i] == '*':
             p_i += 1
-        return p_i == len(p) and s_i == len(s)
+        return p_i == len(p)
