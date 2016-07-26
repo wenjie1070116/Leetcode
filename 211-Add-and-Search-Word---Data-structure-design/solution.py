@@ -32,11 +32,11 @@ class WordDictionary(object):
             return False
         if word[pos] != '.':
             idx = ord(word[pos])-ord('a')
-            if node.children[idx] and self.search(node.children[idx], word, pos+1):
+            if node.children[idx] and self.searchnode(node.children[idx], word, pos+1):
                 return True
         else:
             for i in xrange(26):
-                if node.children[i] and self.search(node.children[i], word, pos+1):
+                if node.children[i] and self.searchnode(node.children[i], word, pos+1):
                     return True
         return False
 
