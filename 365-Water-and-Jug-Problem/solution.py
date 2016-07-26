@@ -12,8 +12,8 @@ class Solution(object):
         :rtype: bool
         """
         gcd = self.GCD(x, y)
-        X = X/gcd
-        Y = Y/gcd
+        X = x/gcd
+        Y = y/gcd
         range_min = min(X, Y, [Y-X,X-Y][X>Y])*gcd
         range_max = (X+Y)*gcd
         if range_min<=z<=range_max:
