@@ -10,7 +10,7 @@ class Solution(object):
             cumset.append(0)
             maxsum = -sys.maxint
             cursum = 0
-            for num i arr:
+            for num in arr:
                 cursum += num
                 idx = bisect.bisect_left(cumset, cursum-k)
                 if 0<=idx<len(cursum):
