@@ -13,7 +13,7 @@ class Solution(object):
             for num in arr:
                 cursum += num
                 idx = bisect.bisect_left(cumset, cursum-k)
-                if 0<=idx<len(cursum):
+                if 0<=idx<len(cumset):
                     maxsum = max(maxsum, cursum-cumset[idx])
                 bisect.insort(cumset, cursum)
             return maxsum
