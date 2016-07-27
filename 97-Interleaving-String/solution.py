@@ -8,6 +8,8 @@ class Solution(object):
         """
         if not s1: return s2 == s3
         if not s2: return s1 == s3
+        if len(s3) != len(s1)+len(s2):
+            return False
         dp = [[False]*(len(s2)+1) for _ in xrange(len(s1)+1)]
         dp[0][0] = True
         
