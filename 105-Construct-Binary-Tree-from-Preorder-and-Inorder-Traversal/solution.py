@@ -10,8 +10,8 @@ class Solution(object):
         if s1 > e1 or s2 > e2: return
         root = TreeNode(preorder[s1])
         idx = inorder.index(preorder[s1])
-        root.left = self.build(preorder, s1+1, s1+idx, inorder, s2, idx-1)
-        root.right = self.build(preorder, s1+idx+1, e1, inorder, idx+1, e2)
+        root.left = self.build(preorder, s1+1, s1+(idx-s2), inorder, s2, idx-1)
+        root.right = self.build(preorder, s1+idx-s2+1, e1, inorder, idx+1, e2)
         return root
     
     def buildTree(self, preorder, inorder):
