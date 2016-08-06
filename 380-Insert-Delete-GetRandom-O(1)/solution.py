@@ -1,3 +1,4 @@
+import random
 class RandomizedSet(object):
 
     def __init__(self):
@@ -20,7 +21,7 @@ class RandomizedSet(object):
         self.nums[val] = self.count
         self.Map[self.count] = val
         self.count += 1
-        return False
+        return True
         
         
 
@@ -34,7 +35,10 @@ class RandomizedSet(object):
         idx = self.nums[val]
         self.nums.pop(val)
         self.count -= 1
-        self.Map[idx] = self.Map[self.count]
+        if idx != self.count:
+            num = self.Map[self.count]
+            self.nums[num] = idx
+            self.Map[idx] = num
         self.Map.pop(self.count)
         return True
         
@@ -44,7 +48,7 @@ class RandomizedSet(object):
         Get a random element from the set.
         :rtype: int
         """
-        idx = randrange(0, self.count)
+        idx = random.randrange(0, self.count)
         return self.Map[idx]
         
 
