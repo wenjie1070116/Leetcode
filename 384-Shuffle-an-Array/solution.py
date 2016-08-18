@@ -1,3 +1,4 @@
+import random
 class Solution(object):
 
     def __init__(self, nums):
@@ -28,13 +29,13 @@ class Solution(object):
         :rtype: List[int]
         """
         res = []
-        idx = randrange(0, self.n)
+        idx = random.randrange(0, self.n)
         res.append(self.Nums[idx])
         self.n -= 1
         self.Nums[idx] = self.Nums[self.n]
         self.Nums.pop()
         while self.Nums:
-            idx = randrange(0, self.n)
+            idx = random.randrange(0, self.n)
             res.append(self.Nums[idx])
             self.n -= 1
             self.Nums[idx] = self.Nums[self.n]
