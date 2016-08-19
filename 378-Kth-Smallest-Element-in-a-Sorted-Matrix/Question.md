@@ -35,9 +35,9 @@ You may assume k is always valid, 1 ≤ k ≤ n<sup>2</sup>.
 
 <div>
 
-<div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
+<div id="tags" class="btn btn-xs btn-warning">Hide Tags</div>
 
-<span class="hidebutton">[Binary Search](/tag/binary-search/) [Heap](/tag/heap/)</span></div>
+<span class="hidebutton" style="display: inline; opacity: 0.0332098;">[Binary Search](/tag/binary-search/) [Heap](/tag/heap/)</span></div>
 
 <div>
 
